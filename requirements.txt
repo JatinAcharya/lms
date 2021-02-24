@@ -1,0 +1,4 @@
+Django==3.0.6
+social-auth-app-django
+mysqlclient==1.4.6
+mysql-connector-python
