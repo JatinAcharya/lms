@@ -25,7 +25,7 @@ SECRET_KEY = 'a*bu++831+uui@^@^fw=meb#*5*+!*dm51rw@$d+)13%yi8_p-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1","lms.com"]
+ALLOWED_HOSTS = ["127.0.0.1","lms.com","10.0.2.15","192.168.0.105"]
 
 
 # Application definition
@@ -78,8 +78,15 @@ WSGI_APPLICATION = 'LMS.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'lms',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'" 
+        }
     }
 }
 
